@@ -1,26 +1,34 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
-
+export const initialUser = {
+    username: '',
+    password: '',
+    confirmPassword: '',
+    email: ''
+}
 const SignupForm = () => {
     const navigate = useNavigate()
-    const [formData, setFormdata] = useState(false)
+    const [formData, setFormData] = useState(initialUser)
     
-    const handleChange = () => {
-
+    const handleChange = (event) => {
+        setFormData({...formData,[event.target.name]: event.target.value})
     }
 
     const handleSubmit = () => {
 
     }
     
+    const {username, password, confirmPassword, email} = formData
     
-    
+    const isFormInvalid = () => {
+        return !(username && password && password === confirmPassword && email )
+    }
     return(
         <>
             <h1>Sign up</h1>
-            <form onSubmit="">
-                <label htmlFor="username">Username</label>
+            <form >
+                <label htmlFor="username">Username:</label>
                 <input 
                     type="text" 
                     value={username}
@@ -28,7 +36,7 @@ const SignupForm = () => {
                     id="username" 
                     onChange={handleChange}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password:</label>
                 <input 
                 type="password" 
                 name="password"
@@ -36,7 +44,7 @@ const SignupForm = () => {
                 id="password"
                 onChange={handleChange} 
                 />
-                <label htmlFor="confirmPassword">Confirm Password</label>
+                <label htmlFor="confirmPassword">Confirm Password:</label>
                 <input 
                 type="password" 
                 name="confirmPassword"
@@ -44,7 +52,7 @@ const SignupForm = () => {
                 id="confirmPassword" 
                 onChange={handleChange}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email:</label>
                 <input 
                 type="email" 
                 name="email"
@@ -53,7 +61,7 @@ const SignupForm = () => {
                 onChange={handleChange}
                 />
                 <div>
-                <button disabled={isFormValid()}>Sign up</button>
+                <button disabled={isFormInvalid()}>Sign up</button>
                 <Link to="/">
                     <button>Cancel</button>
                 </Link>
@@ -62,3 +70,5 @@ const SignupForm = () => {
         </>
     )    
 }
+
+export default SignupForm

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar'
 import { Routes, Route } from 'react-router-dom'
+import SignupForm from './components/SignupForm/SignupForm'
 import './App.css'
 
 function App() {
@@ -9,8 +10,11 @@ function App() {
   return (
     <>
         
-    <NavBar user={user}/>
-     <h1>Landing page</h1>
+      <NavBar user={user}/>
+      <Routes>
+
+        <Route path='/signup' element={<SignupForm />}></Route>
+      </Routes>
 
     </>
   )
