@@ -1,8 +1,8 @@
 import { useState } from "react"
-import * as authService from '../../services/authService'
 import { Link, useNavigate } from "react-router-dom"
+import * as authService from "../../services/authService"
 
-const signinForm = () => {
+const signinForm = (props) => {
     const initialState = {
         username: '',
         hashedPassword: ''
@@ -18,8 +18,18 @@ const signinForm = () => {
         updateMessage('')
         setFormData({...formData, [e.target.name]:e.target.value})
     }
-    const handleSubmit = (e) => {
-
+    const handleSubmit = async(e) => {
+        try {
+            console.log('ayaya')
+            e.preventDefault()
+            const user = await authService.signin(formData)
+            console.log(user, 'user in signing form')
+            props.setUser(user)
+            navigate('/')
+            
+        } catch (error) {
+            updateMessage(error)
+        }
     }
     
     const {username, hashedPassword} = formData
@@ -28,8 +38,8 @@ const signinForm = () => {
     return (
         <main>
             <h1>Log In</h1>
-            <p>{message}</p>
-            <form action="">
+            
+            <form onSubmit={handleSubmit}>
 
                 <div>
                     <label htmlFor="username">Username: </label>
