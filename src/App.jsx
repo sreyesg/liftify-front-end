@@ -19,7 +19,7 @@ function App() {
       <NavBar user={user} handleSignout={handleSignout}/>
       <Routes>
       {user ? (
-        <Route path="/" element={<h1>This is the Dahsboard</h1>}></Route>
+        <Route path="/" element={<h1>This is the Dashboard</h1>}></Route>
       ) : (
         <Route path="/" element={<h1>This is the Landing Page</h1>}></Route>
       )}

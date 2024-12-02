@@ -23,7 +23,6 @@ const signinForm = (props) => {
             console.log('ayaya')
             e.preventDefault()
             const user = await authService.signin(formData)
-            console.log(user, 'user in signing form')
             props.setUser(user)
             navigate('/')
             
