@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar'
 import { Routes, Route } from 'react-router-dom'
 import SignupForm from './components/SignupForm/SignupForm'
+import SigninForm from './components/signinForm/SigninForm'
+import * as authService from './services/authService'
 import './App.css'
-import authService from './services/authService'
 
 function App() {
   const [user, setUser] = useState(false)
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<h1>This is the Landing Page</h1>}></Route>
       )}
         <Route path='/signup' element={<SignupForm setUser={setUser}/>}></Route>
+        <Route path='/signin' element={<SigninForm />}></Route>
       </Routes>
 
     </>

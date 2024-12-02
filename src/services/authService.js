@@ -20,6 +20,9 @@ const signup = async(formData) => {
         throw new Error(error)
     }
 }
+
+
+
 const signout = () => {
     localStorage.removeItem('token')
 }
