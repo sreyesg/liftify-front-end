@@ -6,6 +6,7 @@ import SigninForm from './components/signinForm/SigninForm'
 import * as authService from './services/authService'
 import RoutineList from './components/RoutineList/RoutineList'
 import * as routineService from './services/routineService'
+import RoutineDetails from './components/RoutineDetails/RoutineDetails'
 import './App.css'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <>
         <Route path="/" element={<h1>This is the Dashboard</h1>}></Route>
         <Route path="/routines" element={<RoutineList routines={routines}/>}></Route>
+        <Route path="/routines/:routineId" element={<RoutineDetails />} />
         </>
       ) : (
         <Route path="/" element={<h1>This is the Landing Page</h1>}></Route>

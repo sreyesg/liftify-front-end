@@ -12,6 +12,20 @@ const index = async() => {
     }
 }
 
+const show = async(routineId) => {
+    try {
+        const res = await fetch(`${BACKEND_URL}/routines/${routineId}`, {
+            headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+        })
+        console.log(res)
+        return res.json()
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
 export {
-    index,
+    index, show
 }
