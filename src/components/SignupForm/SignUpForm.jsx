@@ -1,33 +1,43 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import authService from "../../services/authService"
 
-export const initialUser = {
-    username: '',
-    password: '',
-    confirmPassword: '',
-    email: ''
-}
-const SignupForm = () => {
+
+const SignupForm = (props) => {
+
+    const initialState = {
+        username: '',
+        hashedPassword: '',
+        confirmPassword: '',
+        email: ''
+    }
+
     const navigate = useNavigate()
-    const [formData, setFormData] = useState(initialUser)
+    const [formData, setFormData] = useState(initialState)
     
     const handleChange = (event) => {
         setFormData({...formData,[event.target.name]: event.target.value})
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async(e) => {
+        e.preventDefault()
+        const newUserResponse = await authService.signup(formData)
+        console.log(newUserResponse, "New response")
+        props.setUser(newUserResponse.user)
+        navigate('/')
+
 
     }
     
-    const {username, password, confirmPassword, email} = formData
+    const {username, hashedPassword, confirmPassword, email} = formData
     
     const isFormInvalid = () => {
-        return !(username && password && password === confirmPassword && email )
+        return !(username && hashedPassword && hashedPassword === confirmPassword && email )
     }
     return(
         <>
             <h1>Sign up</h1>
-            <form >
+            <form onSubmit={handleSubmit} >
                 <label htmlFor="username">Username:</label>
                 <input 
                     type="text" 
@@ -39,8 +49,8 @@ const SignupForm = () => {
                 <label htmlFor="password">Password:</label>
                 <input 
                 type="password" 
-                name="password"
-                value={password}
+                name="hashedPassword"
+                value={hashedPassword}
                 id="password"
                 onChange={handleChange} 
                 />

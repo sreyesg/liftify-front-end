@@ -13,7 +13,7 @@ function App() {
       <NavBar user={user}/>
       <Routes>
 
-        <Route path='/signup' element={<SignupForm />}></Route>
+        <Route path='/signup' element={<SignupForm setUser={setUser}/>}></Route>
       </Routes>
 
     </>
