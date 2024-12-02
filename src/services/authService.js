@@ -49,4 +49,4 @@ const signin = async(formData) => {
 const signout = () => {
     localStorage.removeItem('token')
 }
-export default {signup, signin, signout}
+export { signup, signin, signout }
