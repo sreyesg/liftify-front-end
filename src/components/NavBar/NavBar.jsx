@@ -9,7 +9,7 @@ const NavBar = (props) => {
                     <ul>
                         <li>Welcome, {user.username}</li>
                         <li><Link to="/">Dashboard</Link></li>
-                        <li><Link to="">Sign Out</Link></li>
+                        <li><Link to="" onClick={props.handleSignout}>Sign Out</Link></li>
                     </ul>
                 </nav>
             ):(

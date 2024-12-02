@@ -14,17 +14,25 @@ const SignupForm = (props) => {
 
     const navigate = useNavigate()
     const [formData, setFormData] = useState(initialState)
+    const [message, setMessage] = useState([''])
     
+    const updateMessage = (msg) => {
+        setMessage(msg)
+    }
     const handleChange = (event) => {
         setFormData({...formData,[event.target.name]: event.target.value})
     }
 
     const handleSubmit = async(e) => {
-        e.preventDefault()
-        const newUserResponse = await authService.signup(formData)
-        console.log(newUserResponse, "New response")
-        props.setUser(newUserResponse.user)
-        navigate('/')
+        try {
+            
+            e.preventDefault()
+            const newUserResponse = await authService.signup(formData)
+            props.setUser(newUserResponse.user)
+            navigate('/')
+        } catch (error) {
+            updateMessage(error.message)
+        }
 
 
     }
