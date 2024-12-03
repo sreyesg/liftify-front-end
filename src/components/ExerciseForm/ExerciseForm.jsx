@@ -17,6 +17,7 @@ const ExerciseForm = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
+        props.handleAddExercise(formData)
         setFormData(initialState)
     }
 

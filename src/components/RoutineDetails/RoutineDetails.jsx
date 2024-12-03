@@ -15,6 +15,12 @@ const RoutineDetails = (props) => {
         fetchRoutine()
     },[routineId])
     
+    const handleAddExercise = async(exerciseFormData) => {
+        const newExercise = await routineService.createExercise(routineId, exerciseFormData)
+        setRoutine({...routine, exercises: [...routine.exercises, newExercise]})
+
+    }
+
     if(!routine)return <main>Loading...</main>
     return(
         <main>
@@ -34,7 +40,7 @@ const RoutineDetails = (props) => {
                     </article>
                 ))}
                 <h4>Add Exercise</h4>
-                <ExerciseForm />
+                <ExerciseForm handleAddExercise= {handleAddExercise}/>
             </section>
 
         </main>

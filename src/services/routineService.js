@@ -44,6 +44,27 @@ const show = async(routineId) => {
 
 }
 
+
+const createExercise = async(routineId, exerciseFormData) => {
+    try {
+        console.log('I made it', routineId, exerciseFormData)
+        const res = await fetch(`${BACKEND_URL}/routines/${routineId}/exercises`,{
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(exerciseFormData)
+        })
+        return res.json()
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
 export {
-    index, show, create
+    index, show, create, createExercise
 }
