@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import * as routineService from "../../services/routineService"
+import ExerciseForm from "../ExerciseForm/ExerciseForm"
 
 const RoutineDetails = (props) => {
     const { routineId } = useParams()
@@ -21,7 +22,6 @@ const RoutineDetails = (props) => {
                 <h1>{routine.title}</h1>
             </header>
             <section>
-                
                 {routine.exercises.map((exercise) => (
                     <article key={exercise._id}>
                         <h3>{exercise.title}</h3>
@@ -30,12 +30,11 @@ const RoutineDetails = (props) => {
                             <li>Sets: {exercise.sets}</li>
                             <li>Repetitions: {exercise.repetitions}</li>
                             <li>Weight: {exercise.weight}</li>
-                            
                         </ul>
-
-
                     </article>
                 ))}
+                <h4>Add Exercise</h4>
+                <ExerciseForm />
             </section>
 
         </main>
