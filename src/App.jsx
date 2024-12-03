@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import SignupForm from './components/SignupForm/SignupForm'
 import SigninForm from './components/signinForm/SigninForm'
 import * as authService from './services/authService'
 import RoutineList from './components/RoutineList/RoutineList'
 import * as routineService from './services/routineService'
 import RoutineDetails from './components/RoutineDetails/RoutineDetails'
+import RoutineForm from './components/RoutineForm/RoutineForm'
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(false)
   const [routines, setRoutines] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -24,6 +26,13 @@ function App() {
   },[user])
 
 
+  const handleAddRoutine = async(routineFormData) => {
+    const newRoutine = await routineService.create(routineFormData)
+
+    setRoutines([newRoutine, ...routines])
+    
+    navigate('/routines')
+  }
   const handleSignout = () => {
     authService.signout()
     setUser(null)
@@ -38,6 +47,7 @@ function App() {
         <Route path="/" element={<h1>This is the Dashboard</h1>}></Route>
         <Route path="/routines" element={<RoutineList routines={routines}/>}></Route>
         <Route path="/routines/:routineId" element={<RoutineDetails />} />
+        <Route path="/routines/new" element={<RoutineForm handleAddRoutine={handleAddRoutine} />} />
         </>
       ) : (
         <Route path="/" element={<h1>This is the Landing Page</h1>}></Route>

@@ -1,5 +1,23 @@
 const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL
 
+
+const create = async(routineFormData) => {
+    try {
+        const res = await fetch(`${BACKEND_URL}/routines`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(routineFormData)
+        })
+        return res.json()
+        
+    } catch (error) {
+        console.log(error)        
+    }
+
+}
 const index = async() => {
     try {
         const res = await fetch(`${BACKEND_URL}/routines`, {
@@ -27,5 +45,5 @@ const show = async(routineId) => {
 }
 
 export {
-    index, show
+    index, show, create
 }

@@ -23,7 +23,7 @@ const signup = async(formData) => {
 
 const signin = async(formData) => {
     try {
-        console.log('from ayaua')
+        
         const res = await fetch(`${BACKEND_URL}/users/signin`, {
             method: 'POST',
             headers: { "Content-Type":"application/json" },

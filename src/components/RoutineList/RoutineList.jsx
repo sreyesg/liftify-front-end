@@ -9,9 +9,7 @@ const RoutineList = (props) => {
                     <article>
                         <header>
                         <h2>{routine.title}</h2>
-                        <p>Author: {routine.author.username} posted on:
-                            {new Date(routine.createdAt).toLocaleDateString()}
-                        </p>
+                        <p> posted on:{new Date(routine.createdAt).toLocaleDateString()}</p>
                         </header>
                         <p>Today's Workout Category: {routine.category}</p>
                     </article>
