@@ -14,10 +14,30 @@ const RoutineDetails = (props) => {
         fetchRoutine()
     },[routineId])
     
-    console.log(routineId)
+    if(!routine)return <main>Loading...</main>
     return(
         <main>
-            Routine Details
+            <header>
+                <h1>{routine.title}</h1>
+            </header>
+            <section>
+                
+                {routine.exercises.map((exercise) => (
+                    <article key={exercise._id}>
+                        <h3>{exercise.title}</h3>
+                        <p>{exercise.category}</p>
+                        <ul>
+                            <li>Sets: {exercise.sets}</li>
+                            <li>Repetitions: {exercise.repetitions}</li>
+                            <li>Weight: {exercise.weight}</li>
+                            
+                        </ul>
+
+
+                    </article>
+                ))}
+            </section>
+
         </main>
     )
 }   

@@ -17,7 +17,7 @@ const show = async(routineId) => {
         const res = await fetch(`${BACKEND_URL}/routines/${routineId}`, {
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
-        console.log(res)
+        console.log(res, 'this response')
         return res.json()
 
     } catch (error) {
