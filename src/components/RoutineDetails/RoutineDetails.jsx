@@ -26,6 +26,7 @@ const RoutineDetails = (props) => {
         <main>
             <header>
                 <h1>{routine.title}</h1>
+                <button onClick={()=> props.handleDeleteRoutine(routineId)}>Delete</button>
             </header>
             <section>
                 {routine.exercises.map((exercise) => (

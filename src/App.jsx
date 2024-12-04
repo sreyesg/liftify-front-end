@@ -33,6 +33,13 @@ function App() {
     
     navigate('/routines')
   }
+
+  const handleDeleteRoutine = async(routineId) => {
+    const deletedRoutine = await routineService.deleteRoutine(routineId)
+
+    setRoutines(routines.filter((routine) => routine._id !== deletedRoutine._id))
+    navigate('/routines')
+  }
   const handleSignout = () => {
     authService.signout()
     setUser(null)
@@ -46,7 +53,7 @@ function App() {
         <>
         <Route path="/" element={<h1>This is the Dashboard</h1>}></Route>
         <Route path="/routines" element={<RoutineList routines={routines}/>}></Route>
-        <Route path="/routines/:routineId" element={<RoutineDetails />} />
+        <Route path="/routines/:routineId" element={<RoutineDetails handleDeleteRoutine={handleDeleteRoutine} />} />
         <Route path="/routines/new" element={<RoutineForm handleAddRoutine={handleAddRoutine} />} />
         </>
       ) : (

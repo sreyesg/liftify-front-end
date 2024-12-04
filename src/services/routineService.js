@@ -63,8 +63,20 @@ const createExercise = async(routineId, exerciseFormData) => {
     }
 }
 
-
+const deleteRoutine = async(routineId) => {
+    try {
+        const res = await fetch(`${BACKEND_URL}/routines/${routineId}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        return res.json()
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export {
-    index, show, create, createExercise
+    index, show, create, createExercise, deleteRoutine
 }

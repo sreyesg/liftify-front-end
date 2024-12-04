@@ -36,7 +36,7 @@ const signin = async(formData) => {
         if(json.token){
             localStorage.setItem('token', json.token)
             const user = JSON.parse(atob(json.token.split('.')[1]))
-            console.log(user)
+            
             return user
 
         }
