@@ -20,7 +20,7 @@ const signinForm = (props) => {
     }
     const handleSubmit = async(e) => {
         try {
-            console.log('ayaya')
+            
             e.preventDefault()
             const user = await authService.signin(formData)
             props.setUser(user)

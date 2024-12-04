@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import * as routineService from "../../services/routineService"
 import ExerciseForm from "../ExerciseForm/ExerciseForm"
 
@@ -26,6 +26,7 @@ const RoutineDetails = (props) => {
         <main>
             <header>
                 <h1>{routine.title}</h1>
+                <Link to={`/routines/${routineId}/edit`}>Edit</Link>
                 <button onClick={()=> props.handleDeleteRoutine(routineId)}>Delete</button>
             </header>
             <section>

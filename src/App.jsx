@@ -40,6 +40,13 @@ function App() {
     setRoutines(routines.filter((routine) => routine._id !== deletedRoutine._id))
     navigate('/routines')
   }
+
+  const handleUpdateRoutine = async(routineId, routineFormData) => {
+    
+    const updatedRoutine = await routineService.update(routineId, routineFormData)
+    setRoutines(routines.map((routine) => (routineId === routine._id ? updatedRoutine: routine)))
+    navigate(`/routines/${routineId}`)
+  }
   const handleSignout = () => {
     authService.signout()
     setUser(null)
@@ -55,6 +62,7 @@ function App() {
         <Route path="/routines" element={<RoutineList routines={routines}/>}></Route>
         <Route path="/routines/:routineId" element={<RoutineDetails handleDeleteRoutine={handleDeleteRoutine} />} />
         <Route path="/routines/new" element={<RoutineForm handleAddRoutine={handleAddRoutine} />} />
+        <Route path="/routines/:routineId/edit" element={<RoutineForm handleUpdateRoutine={handleUpdateRoutine}/>} />
         </>
       ) : (
         <Route path="/" element={<h1>This is the Landing Page</h1>}></Route>

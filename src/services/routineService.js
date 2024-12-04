@@ -35,7 +35,7 @@ const show = async(routineId) => {
         const res = await fetch(`${BACKEND_URL}/routines/${routineId}`, {
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
-        console.log(res, 'this response')
+        
         return res.json()
 
     } catch (error) {
@@ -77,6 +77,25 @@ const deleteRoutine = async(routineId) => {
     }
 }
 
+const update = async(routineId, routineFormData) => {
+    try {
+        const res = await fetch(`${BACKEND_URL}/routines/${routineId}`, {
+            method: "PUT",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(routineFormData)
+        })
+        return res.json()
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
 export {
-    index, show, create, createExercise, deleteRoutine
+    index, show, create, createExercise, deleteRoutine, update
 }
