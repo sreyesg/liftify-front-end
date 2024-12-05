@@ -8,12 +8,16 @@ import RoutineList from './components/RoutineList/RoutineList'
 import * as routineService from './services/routineService'
 import RoutineDetails from './components/RoutineDetails/RoutineDetails'
 import RoutineForm from './components/RoutineForm/RoutineForm'
-import './App.css'
+import LandingPage from './components/Landing'
+// import './App.css'
 
 function App() {
-  const [user, setUser] = useState(false)
+  const initialState = localStorage.getItem('token') ? JSON.parse(atob(localStorage.getItem('token').split('.')[1])):null
+  console.log(initialState)
+  const [user, setUser] = useState(initialState)
   const [routines, setRoutines] = useState([])
   const navigate = useNavigate()
+
 
   useEffect(() => {
 
@@ -53,12 +57,21 @@ function App() {
   }
   return (
     <>
-        
+      <header className="text-gray-600 body-font">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center border">
+      <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      
+      <span className="ml-3 text-3xl text-primary">Liftify</span>
+    </a> 
       <NavBar user={user} handleSignout={handleSignout}/>
+      </div>  
+
+      </header>
+      
       <Routes>
       {user ? (
         <>
-        <Route path="/" element={<h1>This is the Dashboard</h1>}></Route>
+        <Route path="/" element={<LandingPage />}></Route>
         <Route path="/routines" element={<RoutineList routines={routines}/>}></Route>
         <Route path="/routines/:routineId" element={<RoutineDetails handleDeleteRoutine={handleDeleteRoutine} />} />
         <Route path="/routines/new" element={<RoutineForm handleAddRoutine={handleAddRoutine} />} />
