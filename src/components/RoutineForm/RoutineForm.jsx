@@ -34,33 +34,41 @@ const RoutineForm = (props) => {
     const { title, category } = formData
 
     return (
-        <main>
-            <form onSubmit={handlesubmit}>
-                <h1>{routineId ? "Edit Routine":"New Routine"}</h1>
-                <label htmlFor="title">Routine Title:</label>
-                <input 
-                required
-                type="text" 
-                name="title" 
-                value={title}
-                id="title"
-                onChange={handleChange} />
-                <label htmlFor="Category">Routine Category:</label>
-                <select 
-                required
-                name="category" 
-                value={category}
-                id="category"
-                onChange={handleChange} 
-                >
-                <option value="upperBody">Upper Body</option>
-                <option value="lowerBody">Lower Body</option>
-                <option value="core">Core</option>
-                
-                </select>
-                <button type="submit">SUBMIT</button>
-            </form>
-        </main>
+        <section>
+            <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+                <div className="form-div">
+            
+                    <form onSubmit={handlesubmit}>
+                        <h1>{routineId ? "Edit Routine":"New Routine"}</h1>
+                        <label htmlFor="title" className="form-label">Routine Title:</label>
+                        <input 
+                        required
+                        className="form-input"
+                        type="text" 
+                        name="title" 
+                        value={title}
+                        id="title"
+                        onChange={handleChange} />
+                        <label htmlFor="Category" className="form-label">Routine Category:</label>
+                        <select 
+                        required
+                        className="form-input"
+                        name="category" 
+                        value={category}
+                        id="category"
+                        onChange={handleChange} 
+                        >
+                        <option value="upperBody">Upper Body</option>
+                        <option value="lowerBody">Lower Body</option>
+                        <option value="core">Core</option>
+                        
+                        </select>
+                        <button type="submit">SUBMIT</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
     )
 }
 

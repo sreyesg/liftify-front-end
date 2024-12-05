@@ -43,42 +43,42 @@ const SignupForm = (props) => {
         return !(username && hashedPassword && hashedPassword === confirmPassword && email )
     }
     return(
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 font-body">
             <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
                 <div className="bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
 
                 <h1 className="text-gray-900 text-lg font-medium title-font mb-5">Sign up</h1>
                 <form onSubmit={handleSubmit} >
-                    <label htmlFor="username" className="leading-7 text-sm text-gray-600">Username:</label>
+                    <label htmlFor="username" className="form-label">Username:</label>
                     <input 
-                        className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="form-input"
                         type="text" 
                         value={username}
                         name="username" 
                         id="username" 
                         onChange={handleChange}
                     />
-                    <label className="leading-7 text-sm text-gray-600" htmlFor="password">Password:</label>
+                    <label className="form-label" htmlFor="password">Password:</label>
                     <input
-                    className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="form-input"
                     type="password" 
                     name="hashedPassword"
                     value={hashedPassword}
                     id="password"
                     onChange={handleChange} 
                     />
-                    <label htmlFor="confirmPassword">Confirm Password:</label>
+                    <label htmlFor="confirmPassword" className="form-label">Confirm Password:</label>
                     <input 
-                    className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="form-input"
                     type="password" 
                     name="confirmPassword"
                     value={confirmPassword}
                     id="confirmPassword" 
                     onChange={handleChange}
                     />
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email" className="form-label">Email:</label>
                     <input 
-                    className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="form-input"
                     type="email" 
                     name="email"
                     value={email}

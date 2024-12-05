@@ -35,35 +35,43 @@ const signinForm = (props) => {
     
     
     return (
-        <main>
-            <h1>Log In</h1>
-            
-            <form onSubmit={handleSubmit}>
+        <section className="text-gray-600 font-body">
+            <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+                <div className="bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                    <h1 className="text-gray-900 text-lg font-medium title-font mb-5">Log In</h1>
+                    
+                    <form onSubmit={handleSubmit}>
 
-                <div>
-                    <label htmlFor="username">Username: </label>
-                    <input 
-                    type="text" 
-                    name="username" 
-                    value={username}
-                    id="username"
-                    onChange={handleChange} />
+                        <div>
+                            <label htmlFor="username" className="form-label">Username: </label>
+                            <input 
+                            className="form-input"
+                            type="text" 
+                            name="username" 
+                            value={username}
+                            id="username"
+                            onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="hashedPassword" className="form-label">Password: </label>
+                            <input 
+                            className="form-input"
+                            type="password" 
+                            name="hashedPassword" 
+                            value={hashedPassword}
+                            id="hashedPassword"
+                            onChange={handleChange} />
+                        </div>
+                        <button>Log in</button>
+                        <Link to="/">
+                            <button>Cancel</button>
+                        </Link>
+                    </form>
+
                 </div>
-                <div>
-                    <label htmlFor="hashedPassword">Password: </label>
-                    <input 
-                    type="password" 
-                    name="hashedPassword" 
-                    value={hashedPassword}
-                    id="hashedPassword"
-                    onChange={handleChange} />
-                </div>
-                <button>Log in</button>
-                <Link to="/">
-                    <button>Cancel</button>
-                </Link>
-            </form>
-        </main>
+
+            </div>
+        </section>
     )
 }
 
