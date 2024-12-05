@@ -67,7 +67,7 @@ const ExerciseForm = (props) => {
                 value={weight}
                 id="weight"
                 onChange={handleChange} />
-                <button type="submit">SUBMIT</button>
+                <button type="submit">Submit</button>
             </form>
     )
 }

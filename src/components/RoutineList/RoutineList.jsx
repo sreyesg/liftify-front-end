@@ -17,7 +17,7 @@ const RoutineList = (props) => {
                         <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">{routine.title}</h2>
                         <p className="leading-relaxed text-base mb-4"> posted on:{new Date(routine.createdAt).toLocaleDateString()}</p>
                         </header>
-                        <p className="leading-relaxed text-base mb-4">Today's Workout Category: {routine.category}</p>
+                        <p className="leading-relaxed text-base mb-4">Workout Category: {routine.category}</p>
                         <button>Checkout</button>
                     </div>
                     
