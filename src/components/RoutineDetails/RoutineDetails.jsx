@@ -50,11 +50,17 @@ const RoutineDetails = (props) => {
                         </div>
                     ))}
                 </div>
-                <div className="py-24">
-                <h2>Add Exercise</h2>
-                <ExerciseForm handleAddExercise= {handleAddExercise}/>
+                
+                {routine.author._id === props.user._id && (
+                    <>
+                        <div className="py-24">
+                        <h2>Add Exercise</h2>
+                        <ExerciseForm handleAddExercise= {handleAddExercise}/>  
+                        </div>
+                    </>
+                )
+                }
 
-                </div>
 
             </div>
 
