@@ -14,11 +14,8 @@ const SignupForm = (props) => {
 
     const navigate = useNavigate()
     const [formData, setFormData] = useState(initialState)
-    const [message, setMessage] = useState([''])
     
-    const updateMessage = (msg) => {
-        setMessage(msg)
-    }
+
     const handleChange = (event) => {
         setFormData({...formData,[event.target.name]: event.target.value})
     }
@@ -31,7 +28,7 @@ const SignupForm = (props) => {
             props.setUser(newUserResponse.user)
             navigate('/')
         } catch (error) {
-            updateMessage(error.message)
+            console.log(error.message)
         }
 
 
