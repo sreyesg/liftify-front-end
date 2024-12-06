@@ -35,7 +35,7 @@ const RoutineForm = (props) => {
 
     return (
         <section>
-            <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+            <div className="container px-5 py-24 flex flex-wrap items-center justify-center">
                 <div className="form-div">
             
                     <form onSubmit={handlesubmit}>

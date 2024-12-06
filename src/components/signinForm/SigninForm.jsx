@@ -36,8 +36,8 @@ const signinForm = (props) => {
     
     return (
         <section className="text-gray-600 font-body">
-            <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
-                <div className="bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <div className="container px-5 py-24 justify-center flex flex-wrap items-center">
+                <div className="bg-gray-100 rounded-lg p-8 flex flex-col w-1/2 mt-10 md:mt-0">
                     <h1 className="text-gray-900 text-lg font-medium title-font mb-5">Log In</h1>
                     
                     <form onSubmit={handleSubmit}>
