@@ -40,8 +40,8 @@ const signin = async(formData) => {
 
         }
     } catch (error) {
-        console.log(error)
-        throw error
+        throw new Error(error)
+
     }
 }
 

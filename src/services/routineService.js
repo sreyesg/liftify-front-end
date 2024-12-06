@@ -14,7 +14,7 @@ const create = async(routineFormData) => {
         return res.json()
         
     } catch (error) {
-        console.log(error)        
+        throw new Error(error)     
     }
 
 }
@@ -39,7 +39,7 @@ const show = async(routineId) => {
         return res.json()
 
     } catch (error) {
-        console.log(error)
+        throw new Error(error)
     }
 
 }
@@ -59,7 +59,7 @@ const createExercise = async(routineId, exerciseFormData) => {
         return res.json()
         
     } catch (error) {
-        console.log(error)
+        throw new Error(error)
     }
 }
 
@@ -73,7 +73,7 @@ const deleteRoutine = async(routineId) => {
         })
         return res.json()
     } catch (error) {
-        console.log(error)
+        throw new Error(error)
     }
 }
 
@@ -90,7 +90,7 @@ const update = async(routineId, routineFormData) => {
         return res.json()
         
     } catch (error) {
-        console.log(error)
+        throw new Error(error)
     }
 }
 

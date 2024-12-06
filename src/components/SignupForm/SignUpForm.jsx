@@ -28,7 +28,7 @@ const SignupForm = (props) => {
             props.setUser(newUserResponse.user)
             navigate('/')
         } catch (error) {
-            console.log(error.message)
+            throw new Error(error)
         }
 
 
