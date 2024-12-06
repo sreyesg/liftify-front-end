@@ -34,7 +34,7 @@ const ExerciseForm = (props) => {
                 value={title}
                 id="title"
                 onChange={handleChange} />
-                <label htmlFor="Category">Exercise Category:</label>
+                <label htmlFor="category">Exercise Category:</label>
                 <select 
                 name="category" 
                 value={category}

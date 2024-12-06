@@ -49,7 +49,7 @@ const RoutineForm = (props) => {
                         value={title}
                         id="title"
                         onChange={handleChange} />
-                        <label htmlFor="Category" className="form-label">Routine Category:</label>
+                        <label htmlFor="category" className="form-label">Routine Category:</label>
                         <select 
                         required
                         className="form-input"
