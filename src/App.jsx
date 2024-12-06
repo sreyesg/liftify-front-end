@@ -9,7 +9,7 @@ import * as routineService from './services/routineService'
 import RoutineDetails from './components/RoutineDetails/RoutineDetails'
 import RoutineForm from './components/RoutineForm/RoutineForm'
 import LandingPage from './components/Landing'
-// import './App.css'
+
 
 function App() {
   const initialState = localStorage.getItem('token') ? JSON.parse(atob(localStorage.getItem('token').split('.')[1])):null
