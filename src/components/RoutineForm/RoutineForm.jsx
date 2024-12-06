@@ -34,12 +34,12 @@ const RoutineForm = (props) => {
     const { title, category } = formData
 
     return (
-        <section>
-            <div className="container px-5 py-24 flex flex-wrap items-center justify-center">
+        <section className="flex justify-center">
+            <div className="container px-5 py-24 justify-center flex flex-wrap items-center">
                 <div className="form-div">
             
                     <form onSubmit={handlesubmit}>
-                        <h1>{routineId ? "Edit Routine":"New Routine"}</h1>
+                        <h1 className="text-[#1e1e2e] text-[2rem] mb-5">{routineId ? "Edit Routine":"New Routine"}</h1>
                         <label htmlFor="title" className="form-label">Routine Title:</label>
                         <input 
                         required
