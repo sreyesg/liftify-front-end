@@ -3,7 +3,7 @@ import { useState } from "react";
 const ExerciseForm = (props) => {
     const initialState = {
         title: '', 
-        category: '',
+        category: 'upperBody',
         sets: 0,
         repetitions: 0,
         weight: 0
@@ -40,7 +40,7 @@ const ExerciseForm = (props) => {
                 id="category"
                 onChange={handleChange} 
                 >
-                <option value="upperBody">Upper Body</option>
+                <option value="upperBody" selected>Upper Body</option>
                 <option value="lowerBody">Lower Body</option>
                 <option value="core">Core</option>
                 
