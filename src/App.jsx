@@ -72,7 +72,7 @@ function App() {
         <>
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/routines" element={<RoutineList routines={routines}/>}></Route>
-        <Route path="/routines/:routineId" element={<RoutineDetails handleDeleteRoutine={handleDeleteRoutine} />} />
+        <Route path="/routines/:routineId" element={<RoutineDetails handleDeleteRoutine={handleDeleteRoutine} user={user} />} />
         <Route path="/routines/new" element={<RoutineForm handleAddRoutine={handleAddRoutine} />} />
         <Route path="/routines/:routineId/edit" element={<RoutineForm handleUpdateRoutine={handleUpdateRoutine}/>} />
         </>

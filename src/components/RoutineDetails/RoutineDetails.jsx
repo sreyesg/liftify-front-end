@@ -28,8 +28,14 @@ const RoutineDetails = (props) => {
                 <header className="flex flex-col text-center w-full mb-20">
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{routine.title} | <span className="text-xl text-primary tracking-widest font-medium mb-1">{routine.category}</span></h1>
             
-                    <Link to={`/routines/${routineId}/edit`}>Edit</Link>
-                    <button onClick={()=> props.handleDeleteRoutine(routineId)}>Delete</button>
+                    {routine.author._id === props.user._id && (
+                        <>
+                
+                        <Link to={`/routines/${routineId}/edit`}>Edit</Link>
+                        <button onClick={()=> props.handleDeleteRoutine(routineId)}>Delete</button>
+                        </>
+                    )
+                    }
                 </header>
                 <div className="flex flex-wrap border-b-2">
                     {routine.exercises.map((exercise) => (
