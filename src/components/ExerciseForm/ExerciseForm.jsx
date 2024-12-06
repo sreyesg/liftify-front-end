@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import * as routineService from '../../services/routineService'
+import { useState } from "react";
 
 const ExerciseForm = (props) => {
     const initialState = {

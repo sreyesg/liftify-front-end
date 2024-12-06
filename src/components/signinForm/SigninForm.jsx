@@ -7,9 +7,9 @@ const signinForm = (props) => {
         username: '',
         hashedPassword: ''
     }
-    const navigate = useNavigate()
-    const [message, setMessage] = useState([''])
     const [formData, setFormData] = useState(initialState)
+    const [message, setMessage] = useState([''])
+    const navigate = useNavigate()
 
     const updateMessage = (msg) => {
         setMessage(msg)
