@@ -13,7 +13,6 @@ import LandingPage from './components/Landing'
 
 function App() {
   const initialState = localStorage.getItem('token') ? JSON.parse(atob(localStorage.getItem('token').split('.')[1])):null
-  console.log(initialState)
   const [user, setUser] = useState(initialState)
   const [routines, setRoutines] = useState([])
   const navigate = useNavigate()
