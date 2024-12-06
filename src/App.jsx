@@ -78,7 +78,7 @@ function App() {
         <Route path="/routines/:routineId/edit" element={<RoutineForm handleUpdateRoutine={handleUpdateRoutine}/>} />
         </>
       ) : (
-        <Route path="/" element={<h1>This is the Landing Page</h1>}></Route>
+        <Route path="/" element={<LandingPage />}></Route>
       )}
         <Route path='/signup' element={<SignupForm setUser={setUser}/>}></Route>
         <Route path='/signin' element={<SigninForm setUser={setUser}/>}></Route>
