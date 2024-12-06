@@ -14,7 +14,9 @@ const RoutineList = (props) => {
                 <Link key={routine._id} to={`/routines/${routine._id}`}>
                     <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
                         <header>
+                        
                         <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">{routine.title}</h2>
+                        <p className="text-secondary">{routine.author.username}</p>
                         <p className="leading-relaxed text-base mb-4"> posted on:{new Date(routine.createdAt).toLocaleDateString()}</p>
                         </header>
                         <p className="leading-relaxed text-base mb-4">Workout Category: {routine.category}</p>

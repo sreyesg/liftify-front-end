@@ -47,7 +47,7 @@ const show = async(routineId) => {
 
 const createExercise = async(routineId, exerciseFormData) => {
     try {
-        console.log('I made it', routineId, exerciseFormData)
+        
         const res = await fetch(`${BACKEND_URL}/routines/${routineId}/exercises`,{
             method: "POST",
             headers: {
