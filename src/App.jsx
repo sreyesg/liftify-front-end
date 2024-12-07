@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import SignupForm from './components/SignupForm/SignupForm.jsx'
 import SigninForm from './components/signinForm/SigninForm'
 import * as authService from './services/authService'
 import RoutineList from './components/RoutineList/RoutineList'
@@ -9,6 +8,7 @@ import * as routineService from './services/routineService'
 import RoutineDetails from './components/RoutineDetails/RoutineDetails'
 import RoutineForm from './components/RoutineForm/RoutineForm'
 import LandingPage from './components/Landing'
+import SignupForm from './components/SignupForm/SignupForm.jsx'
 
 
 function App() {
