@@ -44,7 +44,7 @@ const SignupForm = (props) => {
             <div className="container px-5 py-24 justify-center flex flex-wrap items-center">
                 <div className="bg-gray-100 rounded-lg p-8 flex flex-col w-1/2 mt-10 md:mt-0">
 
-                <h1 className="text-[#1e1e2e] text-[2rem] font-medium title-font mb-5">Sign up</h1>
+                <h1 className="text-[#1e1e2e] text-4xl font-medium title-font mb-5">Sign up</h1>
                 <form onSubmit={handleSubmit} >
                     <label htmlFor="username" className="form-label">Username:</label>
                     <input 

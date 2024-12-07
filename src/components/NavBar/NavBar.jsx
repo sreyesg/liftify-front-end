@@ -6,7 +6,7 @@ const NavBar = (props) => {
         <>
             {user ? (
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">  
-                    <a className="mr-5 hover:text-gray-900">Welcome, {user.username}</a>
+                    <a className="mr-5 hover:text-gray-900">Welcome, <span className="text-secondary capitalize animate-pulse">{user.username}</span></a>
                     <Link to="/" className="mr-5 hover:text-gray-900">Home</Link>
                     <Link to="/routines" className="mr-5 hover:text-gray-900">Routines</Link>
                     <Link to="/routines/new" className="mr-5 hover:text-gray-900">New Routine</Link>
