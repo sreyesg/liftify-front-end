@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import SignupForm from './components/SignupForm/SignupForm'
+import SignupForm from './components/SignupForm/SignupForm.jsx'
 import SigninForm from './components/signinForm/SigninForm'
 import * as authService from './services/authService'
 import RoutineList from './components/RoutineList/RoutineList'
