@@ -19,7 +19,7 @@ The app allows users to log details of each workout, including exercises, sets, 
     * Dotenv
     * Bcrypt
     * React-router-dom
-* Image: "Liftify Banner". Created by: OpenAI. date: Dec 3rs 2024
+* Image: "Liftify Banner". Created by: OpenAI. date: Dec 3rs 2024.
 ## Techologies
 
 * NodeJs
