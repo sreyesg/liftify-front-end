@@ -8,8 +8,7 @@ import * as routineService from './services/routineService'
 import RoutineDetails from './components/RoutineDetails/RoutineDetails'
 import RoutineForm from './components/RoutineForm/RoutineForm'
 import LandingPage from './components/Landing'
-import SignupForm from './components/SignupForm/SignupForm.jsx';
-
+import SignupForm from './components/SignupForm/signupform.jsx';
 
 function App() {
   const initialState = localStorage.getItem('token') ? JSON.parse(atob(localStorage.getItem('token').split('.')[1])):null
